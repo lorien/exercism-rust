@@ -1,6 +1,7 @@
 use unicode_segmentation::UnicodeSegmentation;
 
 pub fn reverse(input: &str) -> String {
+    // 1st attemp
     //let mut ret = String::from("");
     //for graph in UnicodeSegmentation::graphemes(input, true)
     //    .rev()
@@ -9,5 +10,9 @@ pub fn reverse(input: &str) -> String {
     //    ret.push_str(graph);
     //}
     //ret
-    UnicodeSegmentation::graphemes(input, true).rev().collect::<String>()
+    //
+    // 2nd attemp
+    // UnicodeSegmentation::graphemes(input, true).rev().collect::<String>()
+
+    input.graphemes(true).rev().collect::<String>()
 }
