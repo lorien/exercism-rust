@@ -4,9 +4,7 @@ pub fn find_saddle_points(input: &[Vec<u64>]) -> Vec<(usize, usize)> {
         let mut row_maxes = vec![u64::MIN; input.len()];
         let mut col_mins = vec![u64::MAX; input[0].len()];
         for (rown, row) in input.iter().enumerate() {
-            if let Some(row_max) = row.iter().max() {
-                row_maxes[rown] = *row_max;
-            }
+            row_maxes[rown] = *row.iter().max().unwrap();
             for (coln, val) in row.iter().enumerate() {
                 if *val < col_mins[coln] {
                     col_mins[coln] = *val;
